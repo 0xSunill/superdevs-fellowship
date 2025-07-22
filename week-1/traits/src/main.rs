@@ -6,13 +6,17 @@ struct Square {
     side: u32,
 }
 
-impl Rect {
+trait Shape {
+    fn area(&self) -> u32;
+}
+
+impl Shape for Rect {
     fn area(&self) -> u32 {
         return self.height * self.height;
     }
 }
 
-impl Square {
+impl Shape for Square {
     fn area(&self) -> u32 {
         return self.side * self.side;
     }
@@ -27,3 +31,4 @@ fn main() {
     println!("the area of the Rectangle is {}", r.area());
     println!("the area of the Squre is {}", s.area());
 }
+
